@@ -1,5 +1,10 @@
-.App {
-  text-align: center;
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: 'Kanit', sans-serif;
+  user-select: none;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -21,13 +26,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
