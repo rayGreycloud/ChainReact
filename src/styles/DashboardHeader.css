@@ -1,0 +1,33 @@
+.dashboard-header {
+    width: 100%;
+    height: 56px;
+    /*StickyProperties*/
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    /* /StickyProperties*/
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: darkslategrey;
+    margin-bottom: 8px;
+    padding: 8px;
+    align-items: center;
+}
+
+.dashboard-button {
+    font-size: 2.5em;
+    fill: white;
+    cursor: pointer;
+}
+
+@keyframes open-menu {
+    100% {transform: rotate(90deg)}
+}
+
+.dashboard-menu:active {
+    animation-name: open-menu;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
