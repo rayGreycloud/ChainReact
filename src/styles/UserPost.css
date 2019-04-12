@@ -1,14 +1,13 @@
-.user-post {
-    border: solid black 2px;
+ .user-post {
     width: 240px;
     height: 240px;
     overflow: hidden;
     margin: 4px;
     cursor: pointer;
-}
+} 
 
 .post-content {
     height: 100%;
     width: 100%;
     offset-position: 100%;
-}
+} 

@@ -6,7 +6,10 @@ import PostGroup from '../containers/PostGroup';
 export default class Dashboard extends Component {
     render() {
         return (
-            <PostGroup></PostGroup>
+          <div style={{width:'75vw', marginTop: '6em'}}>
+            <PostGroup title="Today" numPosts="4"/>
+            <PostGroup title="Yesterday" numPosts="14"/>
+          </div>
         )
     }
 }
