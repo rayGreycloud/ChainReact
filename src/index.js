@@ -9,7 +9,7 @@ import Root from './components/Root';
 // Seed or hydrate redux state. 
 if (typeof(Storage) !== 'undefined') {
     store.subscribe(() => {
-        localStorage.setItem('appState', JSON.stringify(store.getState()));
+        sessionStorage.setItem('appState', JSON.stringify(store.getState()));
     });
 }
 

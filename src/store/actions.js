@@ -25,7 +25,15 @@ const actions = {
                 containerName: obj.containerName,
             }
         }
-    }    
+    },
+    logIn: function(obj) {
+        return {
+            type: 'LOG_IN',
+            payload: {
+                username: obj.username,
+            },
+        };
+    }
 };
 
 /**

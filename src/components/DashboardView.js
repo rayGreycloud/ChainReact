@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PostGroupContainer from '../containers/PostGroupContainer';
 
 export default class DashboardView extends Component {

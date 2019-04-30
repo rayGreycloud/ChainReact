@@ -9,9 +9,8 @@ const baseState = {
         yesterday: [],
     },
     // Object representing the logged-in user.
-    userInfo: {
-        name: '',
-        // TODO: Add some more useful fields
+    loggedInUser: {
+       username: '',
     },
 };
 
@@ -25,13 +24,19 @@ const postReducer = function(state = baseState.postGroups, action) {
     return state;
 }
 
-const logInReducer = function(state = baseState.userInfo, action) {
+const logInReducer = function(state = baseState.loggedInUser, action) {
+    if (action.type === 'LOG_IN') {
+        let newState = {...state};
+        debugger;
+        newState.username = action.payload.username;
+        return newState;
+    }
     return state;
 }
 
 const reducers = combineReducers({
     posts: postReducer,
-    login: logInReducer,
+    userInfo: logInReducer,
 });
 
 export default reducers;
