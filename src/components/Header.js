@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/DashboardHeader.css'
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { Link } from 'react-router-dom';
 import LoginModal from './LoginModal';
 
 // Navigation header. Holds the menu button (TODO: define functionality w/ Adam) and user profile buttons

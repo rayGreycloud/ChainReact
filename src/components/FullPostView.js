@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Segment, Image, Divider, Rating, Container, Placeholder, Header } from 'semantic-ui-react';
 // import faker from 'faker';
-import Lorem from 'react-lorem-component';
 import '../styles/FullPostView.css';
 
 export default class FullPostView extends Component {
@@ -10,7 +9,6 @@ export default class FullPostView extends Component {
     return this.props.postInfo.details.action.predicate === "listening" && (
       <div>
         <Header floated="left" color="grey">Listening To: </Header>
-        <Lorem count={1}/>
       </div>
       );
   };
@@ -19,7 +17,6 @@ export default class FullPostView extends Component {
     return this.props.postInfo.details.action.predicate === "feeling" && (
       <div>
         <Header floated="left" color="grey">Feeling: </Header>
-        <Lorem count={1}/>
       </div>
     )
   }

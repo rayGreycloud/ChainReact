@@ -4,7 +4,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css';
 import store from './store/store.js'
-import Root from './components/Root';
+import Root from './Root';
 
 // Seed or hydrate redux state. 
 if (typeof(Storage) !== 'undefined') {
@@ -14,7 +14,7 @@ if (typeof(Storage) !== 'undefined') {
 }
 
 
-ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+ReactDOM.render(<Root store={store}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
