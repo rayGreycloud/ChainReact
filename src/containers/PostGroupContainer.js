@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import PostGroup from '../components/PostGroup';
 
-
 const mapStateToProps = (state, ownProps) => {
+  // debugger;
   return {
-    posts: state.posts[ownProps.title],
+    posts: state.posts.postGroups[ownProps.title],
   };
 }
 

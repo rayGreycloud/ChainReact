@@ -4,9 +4,8 @@ import PostGroupContainer from '../containers/PostGroupContainer';
 export default class DashboardView extends Component {
   constructor(props) {
     super(props);
-    const postGroups = props.postGroups;
     this.state = {
-      postGroups: postGroups,
+      postGroups: props.postGroups,
     }
   }
   render() {

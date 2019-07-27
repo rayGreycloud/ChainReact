@@ -1,19 +1,37 @@
-import UserPost from './UserPost';
 import { Header, Segment, Container, Grid, GridRow, Button } from 'semantic-ui-react';
-import actions from '../store/actions.js';
-import store from '../store/store.js';
-import faker from 'faker';
-
+import _ from 'lodash';
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import {
+  withRouter
+} from 'react-router-dom';
 
-export default class PostGroup extends Component {
+import UserPost from './UserPost';
+import { baseURL } from '../util/API';
+
+class PostGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
       posts: props.posts,
     };
   }
+
+  componentDidUpdate(pProps, pState, snapshot) {
+    if (!_.isEqual(pProps.posts, this.props.posts)) {
+      this.setState({posts: this.props.posts});
+    }
+  }
+
+  createSegments = (posts) => {
+    // debugger;
+    return posts.map((el) => {
+      return <Link key={el.postID} to={`posts/${el.postID}`}>
+        <UserPost img={`${baseURL}/posts/content/${el.postID}`}/>
+        </Link>
+    })
+  }
+
   render() {
     return (
       <div>
@@ -22,31 +40,18 @@ export default class PostGroup extends Component {
           {this.props.title}
         </Container>
         <Container style={{display: 'inline'}} floated="right">
-          <Button primary floated="right" onClick={() => store.dispatch(actions.addPost({
-            author: 'Rulon',
-            img: faker.image.avatar(),
-            rating: {positive: 5, negative: 2},
-            containerName: this.props.title,
-            details: {
-                action: {
-                    subject: 'Pirates of the Caribbean',
-                    predicate: 'watching',
-                },
-                status: 'Testing',
-                location: 'Midwest, USA',
-            }
-          }))}>
+          {this.props.title === 'today' && <Button primary floated="right" onClick={() => {
+            this.props.history.push('/posts/new')
+            }}>
             + Add post
-          </Button>
+          </Button>}
         </Container>
         </Header>
         
         <Segment>
           <Grid container padded centered columns="4">
             <GridRow>
-              {this.state.posts.map(function(el){
-                return <Link key={el.id} to={`posts/${el.id}`}><UserPost content={el}/></Link>
-              })}
+              {this.createSegments(this.state.posts)}
             </GridRow>
           </Grid>
         </Segment>
@@ -54,4 +59,6 @@ export default class PostGroup extends Component {
       )
     }
   }
+  
+  export default withRouter(PostGroup);
   

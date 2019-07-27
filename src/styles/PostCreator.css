@@ -1,0 +1,29 @@
+.post-creation-form {
+  margin-top: 72px; 
+}
+
+.img-upload-preview {
+  display: flex;
+  max-height: 600px;
+  max-width: fit-content;
+}
+.img-upload-placeholder-svg {
+  color: darkgrey;
+}
+.img-upload-segment {
+  font-size: 3em;
+  color: darkgray;
+  justify-content: center;
+  max-height: 600px;
+  max-width: 600px;
+}
+
+.form-container {
+  max-width: 550px;
+  height: auto;
+}
+.btn-centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -7,9 +7,7 @@ export default class UserPost extends Component {
     super(props)
   
     this.state = {
-       imgSrc: props.content.img,
-       id: props.content.id,
-       auth: props.content.author,
+       imgSrc: props.img,
     }
   }
   

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import FullPostViewContainer from './containers/FullPostViewContainer';
 import DashboardContainer from './containers/DashboardContainer';
-
+import PostCreatorContainer from './containers/PostCreatorContainer';
+import FullPostView from './components/FullPostView';
 
 class App extends Component {
   render() {
@@ -13,7 +13,8 @@ class App extends Component {
           <Router>
             <Header>
               <Switch>
-                <Route path='/posts/:postID' component={FullPostViewContainer}/>
+                <Route path='/posts/new' component={PostCreatorContainer}/>
+                <Route path='/posts/:postID' component={FullPostView}/>
                 <Route path='/' component={DashboardContainer}/>
               </Switch>
             </Header>

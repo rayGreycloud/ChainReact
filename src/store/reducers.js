@@ -6,28 +6,40 @@ const baseState = {
     // Each postGroup represents the state of a separate postGroup component (defined in src/components/PostGroup.js).
     postGroups: {
         today: [],
-        yesterday: [],
+        older: [],
     },
+    loading: false,
     // Object representing the logged-in user.
     loggedInUser: {
        username: '',
+       id: '',
     },
 };
 
 
-const postReducer = function(state = baseState.postGroups, action) {
-    if (action.type === 'ADD_POST') {
-        let newState = {...state};
-        newState[action.payload.containerName].push(action.payload);
-        return newState;
+const postReducer = function(state = baseState, action) {
+    let newState = {...state};
+    switch(action.type) {
+        case 'REQUEST_POSTS': 
+            newState.loading = true;
+            return newState;
+
+        case 'RECEIVE_POSTS': 
+            newState.postGroups[action.payload.category] = action.payload.posts;
+            newState.loading = false;
+            console.log(newState);
+            return newState;
+
+        default: 
+            return state;
     }
-    return state;
+
+
 }
 
 const logInReducer = function(state = baseState.loggedInUser, action) {
     if (action.type === 'LOG_IN') {
         let newState = {...state};
-        debugger;
         newState.username = action.payload.username;
         return newState;
     }

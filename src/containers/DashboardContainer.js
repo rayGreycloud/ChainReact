@@ -4,8 +4,9 @@ import DashboardView from '../components/DashboardView';
 
 
 const mapStateToProps = (state) => {
+
     return {
-        postGroups: state.posts,
+        postGroups: state.posts.postGroups,
     };
 }
 

@@ -1,4 +1,4 @@
-import uuidv4 from 'uuid/v4';
+import API from '../util/API';
 
 /**
  * Each action in this object is designed to follow the Flux Standard Action (FSA) 
@@ -10,29 +10,60 @@ import uuidv4 from 'uuid/v4';
  *      and ensure that the user hasn't posted for at least 24 hours.
  * 
  */
+
+ //TODO: Alter the functionality of this action list to retrieve data from the API instead of 
+ // creating its own toy records in the local storage. 
+ // https://daveceddia.com/where-fetch-data-redux/
+
+ 
+
 const actions = {
-    addPost: function(obj) {
-        return {
-            type: 'ADD_POST',
-            payload: {
-                id: uuidv4(),
-                author: obj.author,
-                img: obj.img,
-                rating: obj.rating,
-                details: obj.details,
-                status: obj.status,
-                location: obj.location,
-                containerName: obj.containerName,
+    postActions: {
+        requestPosts: function(cat) {
+            return {
+                type: 'REQUEST_POSTS',
+                payload: {
+                    category: cat,
+                }
+            }
+        },
+
+        receivePosts: function(cat, res) {
+            return {
+                type: 'RECEIVE_POSTS',
+                payload: {
+                    category: cat,
+                    posts: res,
+                }
+            }
+        },
+
+        async: {
+            // thunkified function for async operation of retrieving non-toy data from API
+            requestPostsAsync: function(category) {
+                return function(dispatch) {
+                    dispatch(actions.postActions.requestPosts(category));
+
+                    return API.get('/posts/content').then(
+                        res => res.data,
+                        err => {
+                            console.error('Content retrieval failed:');
+                            console.error(err);
+                        })
+                        .then(res => dispatch(actions.postActions.receivePosts(category, res)))
+                }
             }
         }
     },
-    logIn: function(obj) {
-        return {
-            type: 'LOG_IN',
-            payload: {
-                username: obj.username,
-            },
-        };
+    userActions: {
+        logIn: function(ob) {
+            return {
+                type: 'LOG_IN',
+                payload: {
+                    username: ob.username,
+                },
+            };
+        }
     }
 };
 
