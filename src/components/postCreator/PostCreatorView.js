@@ -41,7 +41,7 @@ class PostForm extends Component {
 
   submitForm = () => {
     const postData = new FormData();
-    postData.set('ownerID', '5d23e214f57dfe06b0f561f8')
+    postData.set('ownerID', process.env.REACT_APP_POST_OWNER )
     postData.set('statusChunks', JSON.stringify({[this.state.statusPredicate]: this.state.statusSubject}))
     postData.set('postContent', this.state.postContent)
     postData.append('image', this.state.selectedFile)
