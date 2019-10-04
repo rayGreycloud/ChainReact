@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import Header from './components/Header';
+import Header from './components/Dashboard/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import DashboardContainer from './containers/DashboardContainer';
 import PostCreatorContainer from './containers/PostCreatorContainer';
 import FullPostView from './components/FullPostView';
+import HowItWorks from './components/Marketing/HowItWorks';
 
 class App extends Component {
   render() {
@@ -13,9 +14,11 @@ class App extends Component {
           <Router>
             <Header>
               <Switch>
+                <Route exact path='/' component={DashboardContainer}/>
                 <Route path='/posts/new' component={PostCreatorContainer}/>
                 <Route path='/posts/:postID' component={FullPostView}/>
-                <Route path='/' component={DashboardContainer}/>
+                <Route exact path='/how' component={HowItWorks}/>
+                <Route exact path='/what' component={DashboardContainer}/>
               </Switch>
             </Header>
           </Router>

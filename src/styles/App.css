@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Roboto', sans-serif;
   user-select: none;
   overflow-x: hidden;
 }

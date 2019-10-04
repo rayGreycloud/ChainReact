@@ -1,0 +1,10 @@
+.page-view {
+    padding: 6em 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 80vw;
+    height: 80vh;
+    justify-self: center;
+    justify-content: space-around;
+    scroll-behavior: smooth;
+}

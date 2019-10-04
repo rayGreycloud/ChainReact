@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DashboardView from '../components/DashboardView';
+import DashboardView from '../components/Dashboard/DashboardView';
 
 
 

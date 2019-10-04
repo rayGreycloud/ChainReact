@@ -1,0 +1,30 @@
+.nav-footer {
+  background-color: #222222;
+  color: dimgray;
+  height: 280px;
+  padding: 16px 40px;
+  width: 100vw;
+  display: sticky;
+  bottom: 0;
+}
+
+.anchor-div {
+  cursor: pointer;
+  width: fit-content;
+  display: block;
+  max-width: 140px;
+  padding: 4px 24px 4px 0;
+  
+}
+
+.anchor-div:active {
+  color: lightgray;
+}
+
+.anchor-div:visited {
+  color: rgb(69, 69, 69)
+}
+
+.anchor-div:link {
+  color: gray;
+}
