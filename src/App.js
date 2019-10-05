@@ -6,6 +6,7 @@ import DashboardContainer from './containers/DashboardContainer';
 import PostCreatorContainer from './containers/PostCreatorContainer';
 import FullPostView from './components/FullPostView';
 import HowItWorks from './components/Marketing/HowItWorks';
+import WhatWeDo from './components/Marketing/WhatWeDo'
 
 class App extends Component {
   render() {
@@ -18,7 +19,7 @@ class App extends Component {
                 <Route path='/posts/new' component={PostCreatorContainer}/>
                 <Route path='/posts/:postID' component={FullPostView}/>
                 <Route exact path='/how' component={HowItWorks}/>
-                <Route exact path='/what' component={DashboardContainer}/>
+                <Route exact path='/what' component={WhatWeDo}/>
               </Switch>
             </Header>
           </Router>
