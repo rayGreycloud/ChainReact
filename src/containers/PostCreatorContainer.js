@@ -1,13 +1,11 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 // import _ from 'lodash';
-import PostCreatorView from '../components/postCreator/PostCreatorView';
-
-
+import PostCreatorView from '../components/postCreator/PostCreatorView'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    ownerID: state.userInfo.ID,
-  };
+    ownerID: state.userInfo.ID
+  }
   // This is messy, and I fully expect it to change.
   // const postFamily = _.filter(state.posts, el => _.find(el, function(o){return o.id === ownProps.match.params.postID}) !== undefined);
   // return {
@@ -15,8 +13,6 @@ const mapStateToProps = (state, ownProps) => {
   // };
 }
 
-const PostCreatorContainer = connect(
-  mapStateToProps,
-)(PostCreatorView);
+const PostCreatorContainer = connect(mapStateToProps)(PostCreatorView)
 
-export default PostCreatorContainer;
+export default PostCreatorContainer

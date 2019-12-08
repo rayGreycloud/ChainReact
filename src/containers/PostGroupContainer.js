@@ -1,16 +1,13 @@
-import { connect } from 'react-redux';
-import PostGroup from '../components/PostGroup';
+import { connect } from 'react-redux'
+import PostGroup from '../components/PostGroup'
 
 const mapStateToProps = (state, ownProps) => {
   // debugger;
   return {
-    posts: state.posts.postGroups[ownProps.title],
-  };
+    posts: state.posts.postGroups[ownProps.title]
+  }
 }
 
+const PostGroupContainer = connect(mapStateToProps)(PostGroup)
 
-const PostGroupContainer = connect(
-  mapStateToProps,
-)(PostGroup);
-
-export default PostGroupContainer;
+export default PostGroupContainer

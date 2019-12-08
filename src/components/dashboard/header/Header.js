@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '../../../styles/DashboardHeader.css'
-import { Link } from 'react-router-dom';
-import LoginModal from '../../LoginModal';
-import NavFooter from '../Footer/NavFooter';
+import { Link } from 'react-router-dom'
+import LoginButton from '../../LoginButton'
+import NavFooter from '../footer/NavFooter'
 
 // Navigation header. Holds the menu button (TODO: define functionality w/ Adam) and user profile buttons
 export default class Header extends Component {
@@ -10,13 +10,16 @@ export default class Header extends Component {
     return (
       <div>
         <div className="dashboard-header">
-          <span style={{marginLeft: '4px'}}></span>
-          <Link to="/" className="dashboard-button"><span >G'dayFam</span></Link>
-          <LoginModal/>
+          <span style={{ marginLeft: '4px' }}></span>
+          <Link to="/" className="dashboard-button">
+            {/* FIXME: This is off-center. Re-work the header a bit. */}
+            <span>G'dayFam</span>
+          </Link>
+          <LoginButton />
         </div>
         <div className="dashboard-view">
           {this.props.children}
-          <NavFooter/>
+          <NavFooter />
         </div>
       </div>
     )

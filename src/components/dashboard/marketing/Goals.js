@@ -1,5 +1,5 @@
 import React from 'react'
-import MarketingFooter from '../Footer/MarketingFooter'
+import MarketingFooter from '../footer/MarketingFooter'
 import { Redirect } from 'react-router-dom'
 
 const content = `
@@ -7,26 +7,29 @@ Still it was a handgun and nine rounds of ammunition, and as he made his way dow
 `
 
 export default function Goals() {
-
   const [redirect, setRedirect] = React.useState(false)
 
-  const buttons = [{
-    content: 'Learn More',
-    color: 'black',
-    onClick: () => {
-      setRedirect(true)}
-  }]
+  const buttons = [
+    {
+      content: 'Learn More',
+      color: 'black',
+      onClick: () => {
+        setRedirect(true)
+      }
+    }
+  ]
 
   return (
     <>
-    <MarketingFooter
-      title="Goals"
-      footerClass="goals"
-      content={content}
-      imgSrc={require("../../../assets/meme-man.png")}
-      CTAs={buttons}
-      txtPosition="right" />
-      { redirect && <Redirect to="/how" />}
+      <MarketingFooter
+        title="Goals"
+        footerClass="goals"
+        content={content}
+        imgSrc={require('../../../assets/meme-man.png')}
+        CTAs={buttons}
+        txtPosition="right"
+      />
+      {redirect && <Redirect to="/how" />}
     </>
   )
 }

@@ -25,4 +25,5 @@ yarn-error.log*
 # IDE env files
 .vscode
 
+# Dev notes
 ignore-me

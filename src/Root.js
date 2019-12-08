@@ -3,16 +3,16 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import App from './App'
 
-const Root = ({store}) => {
+const Root = ({ store }) => {
   return (
     <Provider store={store}>
-        <App/>
+      <App />
     </Provider>
   )
 }
 
 Root.propTypes = {
-    store: PropTypes.object.isRequired
+  store: PropTypes.object.isRequired
 }
 
-export default Root;
+export default Root

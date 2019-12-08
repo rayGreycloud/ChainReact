@@ -1,5 +1,5 @@
 import React from 'react'
-import MarketingFooter from '../Footer/MarketingFooter'
+import MarketingFooter from '../footer/MarketingFooter'
 
 const content = `
 She put his pistol down, picked up her fletcher, dialed the barrel over to single shot, and very 
@@ -8,13 +8,16 @@ carefully put a toxin dart through the center of a skyscraper canyon. No sound b
  of Chiba were the cutting edge, whole bodies of technique supplanted monthly, and still he’d see 
 the matrix in his...
 `
-const buttons = [{
-  content: 'Learn More',
-  color: 'black',
-}, {
-  content: 'Join Now',
-  color: 'black',
-}]
+const buttons = [
+  {
+    content: 'Learn More',
+    color: 'black'
+  },
+  {
+    content: 'Join Now',
+    color: 'black'
+  }
+]
 export default function HowItWorks() {
   return (
     <MarketingFooter
@@ -22,6 +25,7 @@ export default function HowItWorks() {
       footerClass="how-it-works"
       content={content}
       CTAs={buttons}
-      txtPosition="left" />
+      txtPosition="left"
+    />
   )
 }

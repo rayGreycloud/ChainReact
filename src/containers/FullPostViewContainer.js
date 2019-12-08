@@ -4,7 +4,6 @@
 // import FullPostView from '../components/FullPostView';
 // import API from '../util/API';
 
-
 // const mapStateToProps = (state, ownProps) => {
 //   retrieveMeta(ownProps.match.params.postID).then(res => {
 //     // debugger;
