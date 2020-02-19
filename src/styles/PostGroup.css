@@ -1,0 +1,33 @@
+.post-group-heading {
+  padding-left: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-group-heading .ui.header {
+  margin-bottom: 0 !important;
+}
+
+.post-group-header {
+  color: #028090;
+}
+
+.post-group-header .sub.header {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.filter-selector {
+  margin-right: 1rem;
+}
+
+.filter-selector .ui.selection.dropdown {
+  min-width: 150px;
+  min-height: 2em !important;
+  padding: 0.5em;
+}
+
+.filter-selector i {
+  color: #c4c0c0;
+  margin-left: 6px;
+}

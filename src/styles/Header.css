@@ -1,0 +1,58 @@
+.header-container {
+  width: 100%;
+  height: 56px;
+  /* StickyProperties*/
+  /* overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0; */
+  /* /StickyProperties */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #028090;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  margin-bottom: 3rem;
+  padding: 50px 20px 20px;
+}
+
+.header-section {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-search .prompt {
+  border-radius: 0.28571429rem !important;
+}
+
+.search-bar {
+  width: 12rem;
+  font-size: 1.4rem;
+  line-height: 1.55rem;
+  padding: 3px;
+  color: #c3c0c0;
+  border: 1px solid #c4c0c0;
+}
+
+.header-button {
+  font-size: 1.6em;
+  fill: white;
+  color: #028090;
+  cursor: pointer;
+}
+
+/* For menu */
+@keyframes open-menu {
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.dashboard-menu:active {
+  animation-name: open-menu;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
