@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Register from '../components/Register'
-import StepOne from '../components/Register/StepOne'
+import Register from '../../components/Register'
+import StepOne from '../../components/Register/StepOne'
 import actions from '../../store/registration/actions'
 import '../../styles/Registration.css'
 

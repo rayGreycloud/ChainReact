@@ -1,29 +1,33 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { Icon, Image } from 'semantic-ui-react'
 
-import LoginButton from '../../LoginButton'
-import NavFooter from '../footer/NavFooter'
+import SearchBar from './SearchBar'
 
-import '../../styles/DashboardHeader.css'
+import '../../styles/Header.css'
 
-// Navigation header. Holds the menu button (TODO: define functionality w/ Adam) and user profile buttons
-export default class Header extends Component {
-  render() {
-    return (
-      <div>
-        <div className="dashboard-header">
-          <span style={{ marginLeft: '4px' }}></span>
-          <Link to="/" className="dashboard-button">
-            {/* FIXME: This is off-center. Re-work the header a bit. */}
-            <span>G'dayFam</span>
-          </Link>
-          <LoginButton />
+const Header = () => {
+  return (
+    <div>
+      <div className="header-container">
+        <div className="header-section">
+          <div className="user-avatar">
+            <Image
+              src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+              circular
+            />
+          </div>
+          <Icon name="plus" size="large" />
+          <div className="">
+            <SearchBar />
+          </div>
         </div>
-        <div className="dashboard-view">
-          {this.props.children}
-          <NavFooter />
-        </div>
+        <Link to="/" className="header-button">
+          <span>gFam</span>
+        </Link>
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+export default Header

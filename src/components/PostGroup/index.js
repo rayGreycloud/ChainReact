@@ -1,3 +1,3 @@
-import PostGroup from './PostGroupContainer'
+import PostGroup from './PostGroup'
 
 export default PostGroup

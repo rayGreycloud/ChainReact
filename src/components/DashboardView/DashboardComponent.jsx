@@ -1,14 +1,13 @@
 import React from 'react'
 import PostGroup from '../PostGroup'
-import HowItWorks from '../HowItWorks'
-import Goals from '../Goals'
+// import HowItWorks from '../HowItWorks'
+// import Goals from '../Goals'
 
 export default function DashboardComponent({ postGroups }) {
   return (
     <>
       <div
         style={{
-          width: '75vw',
           margin: '6em 10%',
           justifyContent: 'center'
         }}
@@ -23,10 +22,10 @@ export default function DashboardComponent({ postGroups }) {
           )
         })}
       </div>
-      <div style={{ width: '100vw' }}>
+      {/* <div style={{ width: '100vw' }}>
         <Goals />
         <HowItWorks />
-      </div>
+      </div> */}
     </>
   )
 }
