@@ -1,19 +1,15 @@
 .header-container {
   width: 100%;
-  height: 56px;
-  /* StickyProperties*/
-  /* overflow: hidden;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    right: 0; */
-  /* /StickyProperties */
+  /* height: 56px; */
+  position: sticky;
+  z-index: 999;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #028090;
   background-color: hsla(0, 0%, 100%, 0.9);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 50px 20px 20px;
 }
 
