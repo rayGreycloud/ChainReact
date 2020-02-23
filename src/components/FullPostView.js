@@ -1,13 +1,5 @@
 import React, { Component } from 'react'
-import {
-  Segment,
-  Image,
-  Divider,
-  Rating,
-  Container,
-  Placeholder,
-  Header
-} from 'semantic-ui-react'
+import { Segment, Image, Divider, Rating, Container, Placeholder, Header } from 'semantic-ui-react'
 
 import API, { baseURL } from '../util/API'
 import '../styles/FullPostView.css'
@@ -25,6 +17,7 @@ export default class FullPostView extends Component {
       }
     }
   }
+
   componentDidMount() {
     this.retrieveMeta(this.props.match.params.postID).then(res => {
       this.setState({
@@ -33,11 +26,9 @@ export default class FullPostView extends Component {
     })
   }
 
-  //TODO: refactor to something more elegant to one method per status chunk.
+  // TODO: refactor to something more elegant to one method per status chunk.
   listeningPresent() {
-    const listenChunk = this.state.postInfo.statusChunks.filter(
-      el => el.listening
-    )
+    const listenChunk = this.state.postInfo.statusChunks.filter(el => el.listening)
 
     return (
       listenChunk.length > 0 && (
@@ -52,9 +43,7 @@ export default class FullPostView extends Component {
   }
 
   playingPresent() {
-    const playingChunk = this.state.postInfo.statusChunks.filter(
-      el => el.playing
-    )
+    const playingChunk = this.state.postInfo.statusChunks.filter(el => el.playing)
 
     return (
       playingChunk.length > 0 && (
@@ -69,9 +58,7 @@ export default class FullPostView extends Component {
   }
 
   feelingPresent() {
-    const feelingChunk = this.state.postInfo.statusChunks.filter(
-      el => el.feeling
-    )
+    const feelingChunk = this.state.postInfo.statusChunks.filter(el => el.feeling)
 
     return (
       feelingChunk.length > 0 && (
@@ -84,10 +71,9 @@ export default class FullPostView extends Component {
       )
     )
   }
+
   watchingPresent() {
-    const watchingChunk = this.state.postInfo.statusChunks.filter(
-      el => el.watching
-    )
+    const watchingChunk = this.state.postInfo.statusChunks.filter(el => el.watching)
 
     return (
       watchingChunk.length > 0 && (
@@ -102,9 +88,7 @@ export default class FullPostView extends Component {
   }
 
   readingPresent() {
-    const readingChunk = this.state.postInfo.statusChunks.filter(
-      el => el.reading
-    )
+    const readingChunk = this.state.postInfo.statusChunks.filter(el => el.reading)
 
     return (
       readingChunk.length > 0 && (
@@ -142,10 +126,7 @@ export default class FullPostView extends Component {
 
   render() {
     return (
-      <div
-        className="full-post-body"
-        style={{ width: '90%', margin: 'auto', marginTop: '6em' }}
-      >
+      <div className="full-post-body" style={{ width: '90%', margin: 'auto', marginTop: '6em' }}>
         <Segment size="big">
           <Placeholder>
             <Placeholder.Header image>
@@ -157,19 +138,13 @@ export default class FullPostView extends Component {
         </Segment>
         <Segment size="big">
           <Image
-            centered={true}
+            centered
             size="big"
             src={`${baseURL}/posts/content/${this.props.match.params.postID}`}
           />
           <Divider />
           <Container textAlign="center">
-            <Rating
-              maxRating={10}
-              defaultRating={0}
-              icon="star"
-              size="huge"
-              centered="true"
-            />
+            <Rating maxRating={10} defaultRating={0} icon="star" size="huge" centered="true" />
           </Container>
           <Divider />
 

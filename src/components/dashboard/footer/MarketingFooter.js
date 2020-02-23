@@ -35,16 +35,12 @@ export default function MarketingFooter({
             </div>
           </>
         ) : (
-          <Image
-            size="medium"
-            rounded
-            src={imgSrc ? imgSrc : imgSrcPlaceholder}
-          />
+          <Image size="medium" rounded src={imgSrc || imgSrcPlaceholder} />
         )}
       </div>
       <div className="slot-right">
         {txtPosition === 'left' ? (
-          <Image size="large" src={imgSrc ? imgSrc : imgSrcPlaceholder} />
+          <Image size="large" src={imgSrc || imgSrcPlaceholder} />
         ) : (
           <>
             <h1>{title}</h1>

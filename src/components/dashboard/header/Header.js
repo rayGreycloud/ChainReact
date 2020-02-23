@@ -8,7 +8,7 @@ import '../../../styles/DashboardHeader.css'
 // Navigation header. Holds the menu button (TODO: define functionality w/ Adam) and user profile buttons
 const Header = () => (
   <div className="dashboard-header">
-    <span className="dashboard-section"></span>
+    <span className="dashboard-section" />
     <Link to="/" className="dashboard-button">
       <span>G'dayFam</span>
     </Link>

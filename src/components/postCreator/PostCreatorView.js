@@ -1,8 +1,8 @@
 import '../../styles/PostCreator.css'
 import React, { Component } from 'react'
 import { Header, Segment, Form, Image, Icon } from 'semantic-ui-react'
-import FormAPI from '../../util/FormAPI'
 import { withRouter } from 'react-router-dom'
+import FormAPI from '../../util/FormAPI'
 
 const statusModifiers = [
   { key: 'f', value: 'feeling', text: 'Feeling' },
@@ -46,7 +46,7 @@ class PostForm extends Component {
     )
     postData.set('postContent', this.state.postContent)
     postData.append('image', this.state.selectedFile)
-    for (let ent of postData.entries()) {
+    for (const ent of postData.entries()) {
       console.log(ent)
     }
     // TODO: Add bearer token to the headers before shooting this off.
@@ -72,9 +72,7 @@ class PostForm extends Component {
     return (
       <div className="post-creation-form">
         <Header as="h1">G'Day!</Header>
-        <Header as="h3">
-          Share your newest experiences by filling out the form below.
-        </Header>
+        <Header as="h3">Share your newest experiences by filling out the form below.</Header>
         <Segment size="huge">
           <Form loading={this.state.loading}>
             <Segment size="big" className="form-container">
@@ -118,9 +116,7 @@ class PostForm extends Component {
               <Form.TextArea
                 id="post-details"
                 placeholder="Feel like sharing a bit more?"
-                onChange={e =>
-                  this.editFormContent('postContent', e.target.value)
-                }
+                onChange={e => this.editFormContent('postContent', e.target.value)}
               ></Form.TextArea>
               <Form.Group inline>
                 <Form.Dropdown
@@ -135,9 +131,7 @@ class PostForm extends Component {
                 <Form.Input
                   id="status-subject-0"
                   type="text"
-                  onChange={e =>
-                    this.setState({ statusSubject: e.target.value })
-                  }
+                  onChange={e => this.setState({ statusSubject: e.target.value })}
                 ></Form.Input>
               </Form.Group>
             </Segment>

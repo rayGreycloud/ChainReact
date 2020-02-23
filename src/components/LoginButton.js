@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { useAuth0 } from '../util/react-auth0-wrapper'
 import { Button } from 'semantic-ui-react'
+import { useAuth0 } from '../util/react-auth0-wrapper'
 
 export default function LoginButton() {
   const { isAuthenticated, loginWithPopup, logout } = useAuth0()

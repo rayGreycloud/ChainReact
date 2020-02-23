@@ -1,15 +1,7 @@
-import {
-  Header,
-  Segment,
-  Container,
-  Grid,
-  GridRow,
-  Button
-} from 'semantic-ui-react'
+import { Header, Segment, Container, Grid, GridRow, Button } from 'semantic-ui-react'
 import _ from 'lodash'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import UserPost from './UserPost'
 import { baseURL } from '../util/API'

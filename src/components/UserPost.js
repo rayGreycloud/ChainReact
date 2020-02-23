@@ -15,12 +15,7 @@ export default class UserPost extends Component {
     return (
       <GridColumn>
         <Segment className="user-post">
-          <Image
-            className="post-content"
-            rounded
-            src={this.state.imgSrc}
-            alt="sample post"
-          />
+          <Image className="post-content" rounded src={this.state.imgSrc} alt="sample post" />
         </Segment>
       </GridColumn>
     )
