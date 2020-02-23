@@ -17,9 +17,8 @@ const Header = () => {
           />
         </div>
         <Icon name="plus" size="large" />
-        <div className="">
-          <SearchBar />
-        </div>
+
+        <SearchBar />
       </div>
       <Link to="/" className="header-button">
         <span>gFam</span>

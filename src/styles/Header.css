@@ -14,7 +14,8 @@
 }
 
 .header-section {
-  width: 60%;
+  width: 80%;
+  max-width: 24rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,15 +23,6 @@
 
 .header-search .prompt {
   border-radius: 0.28571429rem !important;
-}
-
-.search-bar {
-  width: 12rem;
-  font-size: 1.4rem;
-  line-height: 1.55rem;
-  padding: 3px;
-  color: #c3c0c0;
-  border: 1px solid #c4c0c0;
 }
 
 .header-button {
