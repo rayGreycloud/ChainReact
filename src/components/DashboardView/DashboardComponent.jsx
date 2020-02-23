@@ -1,5 +1,5 @@
 import React from 'react'
-import PostGroup from '../PostGroup'
+import PostGroupContainer from '../PostGroup/PostGroupContainer'
 // import HowItWorks from '../HowItWorks'
 // import Goals from '../Goals'
 
@@ -14,8 +14,8 @@ export default function DashboardComponent({ postGroups }) {
       >
         {Object.keys(postGroups).map(pgName => {
           return (
-            <PostGroup
-              key={`${pgName}${postGroups[pgName].length}`}
+            <PostGroupContainer
+              key={`${pgName}${postGroups[pgName].length}` || 0}
               title={pgName}
               posts={postGroups[pgName]}
             />

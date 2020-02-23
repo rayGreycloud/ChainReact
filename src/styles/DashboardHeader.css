@@ -1,0 +1,49 @@
+.dashboard-header {
+  width: 100%;
+  height: 56px;
+  /*StickyProperties*/
+  overflow: hidden;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  /* /StickyProperties*/
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: #028090;
+  margin-bottom: 8px;
+  padding: 8px;
+  align-items: center;
+}
+
+.dashboard-section {
+  margin-left: 4px;
+}
+
+.dashboard-button {
+  font-size: 2.5em;
+  fill: white;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes open-menu {
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.dashboard-menu:active {
+  animation-name: open-menu;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+.app-body {
+  position: fixed;
+  top: 5%;
+  right: 0;
+  overflow-y: scroll;
+  height: 95%;
+  width: 80%;
+}
