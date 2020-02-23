@@ -1,18 +1,33 @@
 import React from 'react'
+import { number, string } from 'prop-types'
+import { Link } from 'react-router-dom'
+
 import { Icon, Item } from 'semantic-ui-react'
 
 import { ReactComponent as TipJar } from '../../assets/tip-jar.svg'
 
 import '../../styles/PostItem.css'
 
+const propTypes = {
+  id: string.isRequired,
+  postRank: number.isRequired,
+  postImage: string.isRequired,
+  author: string.isRequired,
+  description: string.isRequired,
+  upvoteCount: number.isRequired,
+  commentCount: number.isRequired,
+  postTipTotal: number.isRequired
+}
+
 const defaultProps = {
-  postRank: 1,
-  postImage: 'https://react.semantic-ui.com/images/wireframe/image.png',
-  author: 'Pamela',
-  description: 'Going to lunch with the girls...',
-  upvoteCount: 39,
-  commentCount: 3,
-  postTipTotal: 135.45
+  id: '',
+  postRank: 0,
+  postImage: '',
+  author: '',
+  description: '',
+  upvoteCount: 0,
+  commentCount: 0,
+  postTipTotal: 0
 }
 
 const PostItem = props => {
@@ -31,10 +46,14 @@ const PostItem = props => {
       <div className="post-rank">
         <span>{postRank}</span>
       </div>
+
       <Item.Image size="tiny" src={postImage} />
 
       <Item.Content>
-        <div className="post-item-header">{author}</div>
+        <Link to="/">
+          <div className="post-item-header">{author}</div>
+        </Link>
+
         <Item.Description className="post-item-description">
           {description}
         </Item.Description>
@@ -53,6 +72,8 @@ const PostItem = props => {
     </Item>
   )
 }
+
+PostItem.propTypes = propTypes
 
 PostItem.defaultProps = defaultProps
 
