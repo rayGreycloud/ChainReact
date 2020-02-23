@@ -16,7 +16,7 @@ export default function DashboardView({ postGroups }) {
         {Object.keys(postGroups).map(pgName => {
           return (
             <PostGroupContainer
-              key={`${pgName}${postGroups[pgName].length}`}
+              key={`${pgName}${postGroups[pgName].length}` || 0}
               title={pgName}
               posts={postGroups[pgName]}
             />
