@@ -32,11 +32,8 @@ const PostGroup = props => {
   const [displayPosts, setDisplayPosts] = useState(groupPosts)
   const [selectedFilter, setSelectedFilter] = useState('')
 
-  console.log('is shortlist:', isShortlist)
-
   // sort posts function
   const getSortedPosts = () => {
-    console.log('selected filter:', selectedFilter)
     const newList = groupPosts.slice()
     newList.sort((a, b) => {
       return (a[selectedFilter] - b[selectedFilter]) * -1
@@ -44,6 +41,7 @@ const PostGroup = props => {
     return newList
   }
 
+  // initialize after Mount
   useEffect(() => {
     setSelectedFilter('postTipTotal')
     setIsShortlist(shortlist)

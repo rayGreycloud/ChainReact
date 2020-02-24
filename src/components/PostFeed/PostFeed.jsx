@@ -17,25 +17,18 @@ const defaultProps = {
   postGroups: [
     {
       groupDate: '',
-      groupTitle: 'Today',
-      groupCount: 9, // 0
-      groupTipTotal: 0,
-      groupPosts: getDummyPostData().groupPosts, // []
-      shortlist: false
-    },
-    {
-      groupDate: '',
-      groupTitle: 'Yesterday',
+      groupTitle: '',
       groupCount: 0,
       groupTipTotal: 0,
-      groupPosts: getDummyPostData().groupPosts, // []
-      shortlist: true
+      groupPosts: [],
+      shortlist: false
     }
   ]
 }
 
-const PostFeed = ({ postGroups }) => {
-  // data update function here?
+const PostFeed = () => {
+  // const { postGroups} = props
+  const { postGroups } = getDummyPostData()
 
   return (
     <div className="post-feed">
