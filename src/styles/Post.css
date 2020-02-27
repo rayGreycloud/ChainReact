@@ -1,0 +1,14 @@
+.post-page {
+  background-color: #f2f2f2;
+  margin-top: -2.5em;
+}
+
+.post-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 1.5em;
+}
+
+.comment-container {
+  background-color: white;
+}

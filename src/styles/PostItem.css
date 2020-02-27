@@ -12,6 +12,10 @@
   color: #028090;
 }
 
+.post-image {
+  margin-right: 1.5em;
+}
+
 .post-item-header {
   color: #028090 !important;
   font-style: normal;
