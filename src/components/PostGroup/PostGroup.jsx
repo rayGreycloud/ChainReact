@@ -97,7 +97,7 @@ const PostGroup = props => {
       <Item.Group divided>
         {displayPosts.map((post, idx) => {
           const {
-            postId,
+            id,
             postImage,
             author,
             description,
@@ -108,7 +108,8 @@ const PostGroup = props => {
 
           return (
             <PostItem
-              key={`${postId}${idx}`}
+              key={`${id}${idx}`}
+              id={id}
               postRank={idx + 1}
               postImage={postImage}
               author={author}

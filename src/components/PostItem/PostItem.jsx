@@ -32,6 +32,7 @@ const defaultProps = {
 
 const PostItem = props => {
   const {
+    id,
     postRank,
     postImage,
     author,
@@ -47,10 +48,12 @@ const PostItem = props => {
         <span>{postRank}</span>
       </div>
 
-      <Item.Image size="tiny" src={postImage} />
+      <Link to={`/posts/${id}`} className="post-image">
+        <Item.Image size="tiny" src={postImage} />
+      </Link>
 
       <Item.Content>
-        <Link to="/">
+        <Link to={`/posts/${id}`}>
           <div className="post-item-header">{author}</div>
         </Link>
 
