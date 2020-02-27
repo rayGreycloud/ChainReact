@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from 'semantic-ui-react'
 
 import '../../styles/RegistrationWelcome.css'
 
@@ -18,6 +19,9 @@ const RegisterWelcome = () => {
           the only way to really interact with other users and be rewarded for
           your perspective starts here.
         </p>
+      </div>
+      <div className="register-welcome__icon">
+        <Icon name="arrow right" size="huge" />
       </div>
     </div>
   )
