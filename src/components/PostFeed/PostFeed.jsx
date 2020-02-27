@@ -1,6 +1,7 @@
 import React from 'react'
 import { arrayOf, object } from 'prop-types'
 
+import Header from '../common/Header'
 import PostGroup from '../PostGroup'
 
 import '../../styles/PostFeed.css'
@@ -31,27 +32,30 @@ const PostFeed = () => {
   const { postGroups } = getDummyPostData()
 
   return (
-    <div className="post-feed">
-      {postGroups.map((group, idx) => {
-        const {
-          groupTitle,
-          groupCount,
-          groupTipTotal,
-          groupPosts,
-          shortlist
-        } = group
+    <div className="posts-container">
+      <Header />
+      <div className="post-feed">
+        {postGroups.map((group, idx) => {
+          const {
+            groupTitle,
+            groupCount,
+            groupTipTotal,
+            groupPosts,
+            shortlist
+          } = group
 
-        return (
-          <PostGroup
-            key={idx}
-            groupTitle={groupTitle}
-            groupCount={groupCount}
-            groupTipTotal={groupTipTotal}
-            groupPosts={groupPosts}
-            shortlist={shortlist}
-          />
-        )
-      })}
+          return (
+            <PostGroup
+              key={idx}
+              groupTitle={groupTitle}
+              groupCount={groupCount}
+              groupTipTotal={groupTipTotal}
+              groupPosts={groupPosts}
+              shortlist={shortlist}
+            />
+          )
+        })}
+      </div>
     </div>
   )
 }
