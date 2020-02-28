@@ -7,9 +7,9 @@ import PostGroup from '../PostGroup'
 import '../../styles/PostFeed.css'
 
 // for testing only
-import { getDummyPostData } from '../../util/data-posts'
+import { fetchPostGroups } from '../../util/data-faker'
 
-console.log(getDummyPostData())
+console.log(fetchPostGroups())
 const propTypes = {
   postGroups: arrayOf(object).isRequired
 }
@@ -29,7 +29,7 @@ const defaultProps = {
 
 const PostFeed = () => {
   // const { postGroups} = props
-  const { postGroups } = getDummyPostData()
+  const { postGroups } = fetchPostGroups()
 
   return (
     <div className="posts-container">
