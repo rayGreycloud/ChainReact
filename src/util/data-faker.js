@@ -1,6 +1,59 @@
 import faker from 'faker'
 import moment from 'moment'
 
+import { getGroupData } from './group-data'
+
+export const getPosts = (qty = 20) => {
+  const groupPosts = []
+
+  for (let i = 0; i < qty; i++) {
+    const post = {
+      id: faker.random.uuid(),
+      postImage: 'https://react.semantic-ui.com/images/wireframe/image.png',
+      author: faker.name.firstName(),
+      description: faker.lorem.sentence(),
+      upvoteCount: faker.random.number(99),
+      commentCount: faker.random.number(25),
+      postTipTotal: Number((faker.random.number(10000) / 100).toFixed(3)),
+      comments: []
+    }
+
+    groupPosts.push(post)
+  }
+
+  return groupPosts
+}
+
+export const getPostGroups = (qty = 3) => {
+  let postGroups = []
+
+  // create groups
+  for (let i = 0; i < qty; i++) {
+    const group = {
+      groupDate: moment().subtract(i, 'days'),
+      groupPosts: getPosts()
+    }
+
+    postGroups.push(group)
+  }
+
+  return postGroups
+}
+
+// export const getComments = (quantity = 2) => {}
+
+export const fetchPostGroups = () => {
+  const data = { postGroups: [] }
+  const groups = getPostGroups()
+
+  groups.map(group => {
+    const newGroup = getGroupData(group)
+    data.postGroups.push(newGroup)
+  })
+
+  return data
+}
+
 export const getDummyPostData = (quantity = 20) => {
   const yesterday = moment().subtract(1, 'days')
 
@@ -41,7 +94,6 @@ export const getDummyPostData = (quantity = 20) => {
 
     // determine short list
     group.shortlist = group.groupDate.isSameOrBefore(yesterday, 'day')
-    console.log('short list:', group.shortlist)
 
     // calculate group count
     group.groupCount = group.groupPosts.length
