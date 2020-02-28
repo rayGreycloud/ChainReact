@@ -52,3 +52,12 @@
   margin-bottom: 1rem;
   margin-left: 2rem;
 }
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.home-button-2 {
+  margin-left: 2rem !important;
+}

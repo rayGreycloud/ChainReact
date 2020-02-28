@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import { Button } from 'semantic-ui-react'
 
 import '../../styles/Home.css'
 
@@ -27,6 +30,15 @@ const Home = () => {
           Your audience pays you directly if they enjoy your content... No one
           makes money off your content, except you.
         </p>
+      </div>
+
+      <div className="home-buttons">
+        <Button as={Link} to={'/login'} inverted disabled>
+          Login
+        </Button>
+        <Button as={Link} to={'/register'} inverted className="home-button-2">
+          Register
+        </Button>
       </div>
     </div>
   )
