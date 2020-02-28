@@ -1,3 +1,3 @@
-import PostFeed from './PostFeed'
+import PostFeed from './PostFeed';
 
-export default PostFeed
+export default PostFeed;

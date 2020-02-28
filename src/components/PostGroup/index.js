@@ -1,3 +1,3 @@
-import PostGroup from './PostGroup'
+import PostGroup from './PostGroup';
 
-export default PostGroup
+export default PostGroup;

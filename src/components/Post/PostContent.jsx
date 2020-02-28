@@ -1,6 +1,6 @@
-import React from 'react'
-import { array, number, string } from 'prop-types'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { array, number, string } from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
   Segment,
   Image,
@@ -8,10 +8,10 @@ import {
   Rating,
   Container,
   Item,
-  Icon
-} from 'semantic-ui-react'
+  Icon,
+} from 'semantic-ui-react';
 
-import '../../styles/PostContent.css'
+import '../../styles/PostContent.css';
 
 const propTypes = {
   id: string.isRequired,
@@ -21,8 +21,8 @@ const propTypes = {
   upvoteCount: number.isRequired,
   commentCount: number.isRequired,
   postTipTotal: number.isRequired,
-  comments: array
-}
+  comments: array,
+};
 
 const defaultProps = {
   id: '',
@@ -31,8 +31,8 @@ const defaultProps = {
   description: '',
   upvoteCount: 0,
   commentCount: 0,
-  postTipTotal: 0
-}
+  postTipTotal: 0,
+};
 
 const PostContent = ({ post }) => {
   const {
@@ -42,50 +42,50 @@ const PostContent = ({ post }) => {
     description,
     upvoteCount,
     commentCount,
-    postTipTotal
-  } = post
+    postTipTotal,
+  } = post;
 
   return (
     <>
-      <Segment className="post-content" size="big">
+      <Segment className='post-content' size='big'>
         <Item.Content>
           <Link to={`/posts/${id}`}>
-            <div className="post-header">{author}</div>
+            <div className='post-header'>{author}</div>
           </Link>
 
-          <Item.Description className="post-description">
+          <Item.Description className='post-description'>
             {description}
           </Item.Description>
           <Item.Extra>
-            <span className="upvote-count">
-              <Icon name="chevron up" />
+            <span className='upvote-count'>
+              <Icon name='chevron up' />
               {upvoteCount}
             </span>
-            <span className="post-comment-count">{commentCount} comments</span>
-            <span className="post-tip-total">Tips: {postTipTotal}</span>
+            <span className='post-comment-count'>{commentCount} comments</span>
+            <span className='post-tip-total'>Tips: {postTipTotal}</span>
           </Item.Extra>
         </Item.Content>
       </Segment>
-      <Segment size="big">
-        <Image centered={true} size="large" src={postImage} />
+      <Segment size='big'>
+        <Image centered={true} size='large' src={postImage} />
         <Divider />
-        <Container textAlign="center">
+        <Container textAlign='center'>
           <Rating
             maxRating={10}
             defaultRating={0}
-            icon="star"
-            size="large"
-            centered="true"
+            icon='star'
+            size='large'
+            centered='true'
           />
         </Container>
         <Divider />
       </Segment>
     </>
-  )
-}
+  );
+};
 
-PostContent.propTypes = propTypes
+PostContent.propTypes = propTypes;
 
-PostContent.defaultProps = defaultProps
+PostContent.defaultProps = defaultProps;
 
-export default PostContent
+export default PostContent;

@@ -1,116 +1,116 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import { Form, Input, Divider, Button, Icon, Message } from 'semantic-ui-react'
+import { Form, Input, Divider, Button, Icon, Message } from 'semantic-ui-react';
 
-import Tooltip from '../common/Tooltip'
+import Tooltip from '../common/Tooltip';
 
-import '../../styles/RegisterForm.css'
+import '../../styles/RegisterForm.css';
 
 const RegisterForm = props => {
-  const regState = { errorState: '' }
+  const regState = { errorState: '' };
 
   const genderOptions = [
     { key: 'm', text: 'Male', value: 'male' },
     { key: 'f', text: 'Female', value: 'female' },
-    { key: 'o', text: 'Other', value: 'other' }
-  ]
+    { key: 'o', text: 'Other', value: 'other' },
+  ];
 
   const handleChange = value => {
-    console.log('value: ', value)
-  }
+    console.log('value: ', value);
+  };
 
   const handleSubmit = (event, data) => {
-    event.preventDefault()
-    console.log('form submitted: ', data)
-  }
+    event.preventDefault();
+    console.log('form submitted: ', data);
+  };
 
   return (
-    <div className="reg-form">
-      <div className="reg-form__div">
+    <div className='reg-form'>
+      <div className='reg-form__div'>
         <h1>Let's get started.</h1>
-        <div className="reg-form__div--heading">
+        <div className='reg-form__div--heading'>
           Enter your personal information down below, and we'll get to work on
           creating your very own GFam account!
         </div>
 
-        <div className="reg-form__div--form-container">
+        <div className='reg-form__div--form-container'>
           <Form
-            className="reg-form__form"
-            action="submit"
+            className='reg-form__form'
+            action='submit'
             loading={false}
             onSubmit={handleSubmit}
           >
-            <div className="reg-form__div--input-container">
+            <div className='reg-form__div--input-container'>
               <Form.Input
-                className="reg-form__input"
-                name="name"
+                className='reg-form__input'
+                name='name'
                 control={Input}
-                label="First Name"
+                label='First Name'
                 required
                 onChange={handleChange}
               />
             </div>
-            <div className="reg-form__div--input-container">
+            <div className='reg-form__div--input-container'>
               <Form.Input
-                className="reg-form__input"
-                name="surname"
+                className='reg-form__input'
+                name='surname'
                 control={Input}
-                label="Last Name"
+                label='Last Name'
                 required
                 onChange={handleChange}
               />
             </div>
-            <div className="reg-form__div--input-container">
+            <div className='reg-form__div--input-container'>
               <Form.Select
-                className="reg-form__input--dropdown"
-                name="gender"
-                label="Gender"
+                className='reg-form__input--dropdown'
+                name='gender'
+                label='Gender'
                 options={genderOptions}
                 onChange={handleChange}
               />
             </div>
-            <div className="reg-form__div--input-container">
+            <div className='reg-form__div--input-container'>
               <Form.Input
                 fluid
-                className="reg-form__input"
-                name="dob"
+                className='reg-form__input'
+                name='dob'
                 control={Input}
-                placeholder="MM/DD/YYYY"
-                label="Date of Birth"
+                placeholder='MM/DD/YYYY'
+                label='Date of Birth'
                 required
                 onChange={handleChange}
               />
             </div>
 
-            <div className="reg-form__div--input-container reg-form__group">
+            <div className='reg-form__div--input-container reg-form__group'>
               <Form.Input
-                className="reg-form__input"
-                name="username"
+                className='reg-form__input'
+                name='username'
                 control={Input}
-                label="Username"
+                label='Username'
                 required
                 onChange={handleChange}
               />
             </div>
-            <div className="reg-form__div--input-container">
+            <div className='reg-form__div--input-container'>
               <Form.Input
-                className="reg-form__input"
+                className='reg-form__input'
                 label={{
                   children: (
                     <>
                       <Tooltip
                         light
-                        content="Passwords should contain a mix of numbers and letters. Capitalization and punctuation are great, too."
+                        content='Passwords should contain a mix of numbers and letters. Capitalization and punctuation are great, too.'
                       />
                       Password
                     </>
-                  )
+                  ),
                 }}
-                name="password"
+                name='password'
                 control={Input}
-                type="password"
+                type='password'
                 required
                 onChange={handleChange}
               />
@@ -118,25 +118,25 @@ const RegisterForm = props => {
             {regState.errorState !== '' && (
               <Message
                 error
-                header="Registration Error"
+                header='Registration Error'
                 content={`Our servers responded to your request with the following: ${regState.errorState}`}
-                className="reg-form__div--error-msg"
+                className='reg-form__div--error-msg'
               />
             )}
-            <div className="reg-form__btns">
+            <div className='reg-form__btns'>
               <Button
-                color="teal"
-                animated="vertical"
-                type="submit"
-                className="reg-form__btn1"
+                color='teal'
+                animated='vertical'
+                type='submit'
+                className='reg-form__btn1'
               >
                 <Button.Content visible>NEXT</Button.Content>
                 <Button.Content hidden>
-                  <Icon name="arrow right" />
+                  <Icon name='arrow right' />
                 </Button.Content>
               </Button>
 
-              <Button as={Link} to={'/'} inverted className="reg-form__btn2">
+              <Button as={Link} to={'/'} inverted className='reg-form__btn2'>
                 Cancel
               </Button>
             </div>
@@ -144,9 +144,9 @@ const RegisterForm = props => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-RegisterForm.propTypes = {}
+RegisterForm.propTypes = {};
 
-export default RegisterForm
+export default RegisterForm;
