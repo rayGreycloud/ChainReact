@@ -35,5 +35,5 @@ if (typeof Storage !== 'undefined') {
   )
 }
 
-store.dispatch(actions.postActions.async.requestPostsAsync('today'))
+// store.dispatch(actions.postActions.async.requestPostsAsync('today'))
 export default store

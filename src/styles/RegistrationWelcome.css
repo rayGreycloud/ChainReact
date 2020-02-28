@@ -1,0 +1,26 @@
+.register-welcome {
+  height: 100vh;
+  padding-top: 6em;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #05668d, #00a896, #02c39a);
+  background-size: 300% 300%;
+  animation: gradientBG 8s ease infinite;
+  color: white;
+}
+
+.register-welcome__header {
+  font-size: 3em;
+  font-weight: bolder;
+  padding: 1.5em;
+}
+
+.register-welcome__body {
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 1.5em;
+}
