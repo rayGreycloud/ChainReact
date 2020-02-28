@@ -14,10 +14,22 @@
   justify-content: center;
 }
 
-.reg-form__btn {
+.reg-form__btns {
   width: 80%;
   padding: 16px;
   margin-top: 2rem;
+}
+
+.reg-form__btn1 {
+  width: 10rem;
+  min-width: 100px;
+}
+
+.reg-form__btn2 {
+  width: 10rem;
+  min-width: 100px;
+  margin-left: 2rem !important;
+  text-transform: uppercase !important;
 }
 
 .reg-form__div {

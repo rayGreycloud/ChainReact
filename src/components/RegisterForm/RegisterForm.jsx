@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+
 import { Form, Input, Divider, Button, Icon, Message } from 'semantic-ui-react'
 
 import Tooltip from '../common/Tooltip'
@@ -121,12 +123,21 @@ const RegisterForm = props => {
                 className="reg-form__div--error-msg"
               />
             )}
-            <div className="reg-form__btn">
-              <Button fluid color="teal" animated="vertical" type="submit">
+            <div className="reg-form__btns">
+              <Button
+                color="teal"
+                animated="vertical"
+                type="submit"
+                className="reg-form__btn1"
+              >
                 <Button.Content visible>NEXT</Button.Content>
                 <Button.Content hidden>
                   <Icon name="arrow right" />
                 </Button.Content>
+              </Button>
+
+              <Button as={Link} to={'/'} inverted className="reg-form__btn2">
+                Cancel
               </Button>
             </div>
           </Form>
