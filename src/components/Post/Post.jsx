@@ -1,13 +1,13 @@
-import React from 'react'
-import { object } from 'prop-types'
-import PostContent from './PostContent'
-import Comment from '../Comment'
+import React from 'react';
+import { object } from 'prop-types';
+import PostContent from './PostContent';
+import Comment from '../Comment';
 
-import '../../styles/Post.css'
+import '../../styles/Post.css';
 
 const propTypes = {
-  post: object.isRequired
-}
+  post: object.isRequired,
+};
 
 const defaultProps = {
   post: {
@@ -17,26 +17,26 @@ const defaultProps = {
     description: 'Ipsa molestias eum.',
     upvoteCount: 41,
     commentCount: 19,
-    postTipTotal: 2.3
-  }
-}
+    postTipTotal: 2.3,
+  },
+};
 
 const Post = props => {
-  const { post } = props
+  const { post } = props;
   return (
-    <div className="post-page">
-      <div className="post-container">
+    <div className='post-page'>
+      <div className='post-container'>
         <PostContent post={post} />
-        <div className="comment-container">
+        <div className='comment-container'>
           <Comment />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-Post.propTypes = propTypes
+Post.propTypes = propTypes;
 
-Post.defaultProps = defaultProps
+Post.defaultProps = defaultProps;
 
-export default Post
+export default Post;

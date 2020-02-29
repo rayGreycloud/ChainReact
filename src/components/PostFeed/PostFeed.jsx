@@ -1,18 +1,18 @@
-import React from 'react'
-import { arrayOf, object } from 'prop-types'
+import React from 'react';
+import { arrayOf, object } from 'prop-types';
 
-import Header from '../common/Header'
-import PostGroup from '../PostGroup'
+import Header from '../common/Header';
+import PostGroup from '../PostGroup';
 
-import '../../styles/PostFeed.css'
+import '../../styles/PostFeed.css';
 
 // for testing only
-import { fetchPostGroups } from '../../util/data-faker'
+import { fetchPostGroups } from '../../util/data-faker';
 
-console.log(fetchPostGroups())
+console.log(fetchPostGroups());
 const propTypes = {
-  postGroups: arrayOf(object).isRequired
-}
+  postGroups: arrayOf(object).isRequired,
+};
 
 const defaultProps = {
   postGroups: [
@@ -22,27 +22,27 @@ const defaultProps = {
       groupCount: 0,
       groupTipTotal: 0,
       groupPosts: [],
-      shortlist: false
-    }
-  ]
-}
+      shortlist: false,
+    },
+  ],
+};
 
 const PostFeed = () => {
   // const { postGroups} = props
-  const { postGroups } = fetchPostGroups()
+  const { postGroups } = fetchPostGroups();
 
   return (
-    <div className="posts-container">
+    <div className='posts-container'>
       <Header />
-      <div className="post-feed">
+      <div className='post-feed'>
         {postGroups.map((group, idx) => {
           const {
             groupTitle,
             groupCount,
             groupTipTotal,
             groupPosts,
-            shortlist
-          } = group
+            shortlist,
+          } = group;
 
           return (
             <PostGroup
@@ -53,15 +53,15 @@ const PostFeed = () => {
               groupPosts={groupPosts}
               shortlist={shortlist}
             />
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-PostFeed.propTypes = propTypes
+PostFeed.propTypes = propTypes;
 
-PostFeed.defaultProps = defaultProps
+PostFeed.defaultProps = defaultProps;
 
-export default PostFeed
+export default PostFeed;

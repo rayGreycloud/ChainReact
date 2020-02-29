@@ -1,3 +1,3 @@
-import RegisterWelcome from './RegisterWelcome'
+import RegisterWelcome from './RegisterWelcome';
 
-export default RegisterWelcome
+export default RegisterWelcome;

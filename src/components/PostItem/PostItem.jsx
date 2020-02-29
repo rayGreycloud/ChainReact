@@ -1,12 +1,12 @@
-import React from 'react'
-import { number, string } from 'prop-types'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { number, string } from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import { Icon, Item } from 'semantic-ui-react'
+import { Icon, Item } from 'semantic-ui-react';
 
-import { ReactComponent as TipJar } from '../../assets/tip-jar.svg'
+import { ReactComponent as TipJar } from '../../assets/tip-jar.svg';
 
-import '../../styles/PostItem.css'
+import '../../styles/PostItem.css';
 
 const propTypes = {
   id: string.isRequired,
@@ -16,8 +16,8 @@ const propTypes = {
   description: string.isRequired,
   upvoteCount: number.isRequired,
   commentCount: number.isRequired,
-  postTipTotal: number.isRequired
-}
+  postTipTotal: number.isRequired,
+};
 
 const defaultProps = {
   id: '',
@@ -27,8 +27,8 @@ const defaultProps = {
   description: '',
   upvoteCount: 0,
   commentCount: 0,
-  postTipTotal: 0
-}
+  postTipTotal: 0,
+};
 
 const PostItem = props => {
   const {
@@ -39,45 +39,45 @@ const PostItem = props => {
     description,
     upvoteCount,
     commentCount,
-    postTipTotal
-  } = props
+    postTipTotal,
+  } = props;
 
   return (
-    <Item className="post-item">
-      <div className="post-rank">
+    <Item className='post-item'>
+      <div className='post-rank'>
         <span>{postRank}</span>
       </div>
 
-      <Link to={`/posts/${id}`} className="post-image">
-        <Item.Image size="tiny" src={postImage} />
+      <Link to={`/posts/${id}`} className='post-image'>
+        <Item.Image size='tiny' src={postImage} />
       </Link>
 
       <Item.Content>
         <Link to={`/posts/${id}`}>
-          <div className="post-item-header">{author}</div>
+          <div className='post-item-header'>{author}</div>
         </Link>
 
-        <Item.Description className="post-item-description">
+        <Item.Description className='post-item-description'>
           {description}
         </Item.Description>
         <Item.Extra>
-          <span className="upvote-count">
-            <Icon name="chevron up" />
+          <span className='upvote-count'>
+            <Icon name='chevron up' />
             {upvoteCount}
           </span>
-          <span className="post-comment-count">{commentCount} comments</span>
+          <span className='post-comment-count'>{commentCount} comments</span>
         </Item.Extra>
       </Item.Content>
-      <div className="floated post-item-tips">
+      <div className='floated post-item-tips'>
         <TipJar />
-        <div className="post-tips-amount">{postTipTotal}</div>
+        <div className='post-tips-amount'>{postTipTotal}</div>
       </div>
     </Item>
-  )
-}
+  );
+};
 
-PostItem.propTypes = propTypes
+PostItem.propTypes = propTypes;
 
-PostItem.defaultProps = defaultProps
+PostItem.defaultProps = defaultProps;
 
-export default PostItem
+export default PostItem;
