@@ -49,6 +49,7 @@ export const fetchPostGroups = () => {
   groups.map(group => {
     const newGroup = getGroupData(group);
     data.postGroups.push(newGroup);
+    return data;
   });
 
   return data;

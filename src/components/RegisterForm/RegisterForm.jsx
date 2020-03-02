@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { Form, Input, Divider, Button, Icon, Message } from 'semantic-ui-react';
+import { Form, Input, Button, Icon, Message } from 'semantic-ui-react';
 
 import Tooltip from '../common/Tooltip';
 
 import '../../styles/RegisterForm.css';
 
-const RegisterForm = props => {
+const RegisterForm = () => {
   const regState = { errorState: '' };
 
   const genderOptions = [
@@ -146,7 +145,5 @@ const RegisterForm = props => {
     </div>
   );
 };
-
-RegisterForm.propTypes = {};
 
 export default RegisterForm;
